@@ -5,4 +5,7 @@ The mapping of ligand-receptor pairs is the cornerstone of understanding complic
 
 
 
-#Questions
+
+## Questions
+<p><em>For more information please connecting honglin.wang@uconn.edu</em></p>
+<p><em>For citation please check the <a href="https://ieeexplore.ieee.org/document/9669811">here</a></p>
