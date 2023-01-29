@@ -1,0 +1,422 @@
+@import "palette.css";
+
+
+.rmq-annotator-adder {
+  z-index: 2147483630;
+  position: absolute;
+  transform-origin: 0 0;
+}
+
+.rmq-annotator-hl {
+  background: none;
+  transition: background 1s;
+  cursor: pointer;
+  /* for annualreviews */
+  /*line-height: 1.4;*/
+}
+
+.rmq-annotator-hl.rmq-annotator-hl-private{
+  border-bottom: 2px solid #81c1f3;
+  transition: border-bottom 1s;
+}
+/* AMS Mathviewer Specific, lower the bottom highlight to match the inline maths */
+body[data-type="book"] .box .rmq-annotator-hl.rmq-annotator-hl-private:not([data-jats^="math"]){
+  padding-bottom: 2px;
+}
+
+.rmq-annotator-hl.rmq-annotator-hl-private.rmq-active{
+  border-bottom: 2px solid var(--link-color);
+}
+
+.rmq-annotator-hl.rmq-annotator-hl-comment{
+  /*background: var(--light-grey-fill);*/
+  /*transition: background 1s;*/
+}
+
+
+.rmq-annotator-hl.rmq-annotator-hl-conversation{
+  background: #AFCDFA;
+  transition: background-color 1s;
+}
+
+.rmq-annotator-hl.rmq-annotator-hl-conversation.rmq-active{
+
+}
+
+
+.pdfViewer .page .textLayer .rmq-annotator-hl.rmq-annotator-hl-conversation{
+  background: #AFCDFA7F;
+  transition: background-color 1s;
+}
+
+.pdfViewer .page .textLayer .rmq-annotator-hl.rmq-annotator-hl-conversation.rmq-active{
+
+}
+
+
+.rmq-annotator-hl.rmq-annotator-hl-comment.rmq-active{
+  background: #AFCDFA;
+}
+
+.pdfViewer .page .textLayer .rmq-annotator-hl.rmq-annotator-hl-comment.rmq-active{
+  background: #AFCDFA7F;
+}
+
+.rmq-annotator-hl.rmq-annotator-hl-update {
+  /*background: var(--light-grey-fill);*/
+  /*transition: border-bottom 1s;*/
+}
+.rmq-annotator-hl.rmq-annotator-hl-update.rmq-active{
+  background: #daf9f0;
+  /*transition: background 1s;*/
+}
+
+.pdfViewer .page .textLayer .rmq-annotator-hl.rmq-annotator-hl-update.rmq-active{
+  background: #daf9f07F;
+}
+
+.rmq-annotator-outer{
+  display:none;
+}
+
+
+
+.rmq-annotator-hl.rmq-annotator-hl-temporary {
+  background: var(--light-grey-fill);
+}
+
+.pdfViewer .page .textLayer .rmq-annotator-hl.rmq-annotator-hl-temporary {
+  background: var(--light-grey-fill-pdf);
+}
+.rmq-annotator-wrapper {
+  /*position: relative; */ /*Breaks the scrolling in sciencedirect */
+}
+
+[data-paragraph-start]{
+  /*
+  text-decoration: underline;
+  text-decoration-color:red;
+  */
+}
+
+[data-paragraph-end]{
+/*
+  text-decoration: underline;
+  text-decoration-color:darkblue;
+*/
+}
+
+html button.chatballon{
+  width: 27px;
+  height: 27px;
+  background-size: 27px 27px;
+  padding: 1px 3px 2px 1px;
+  background-color: inherit;
+  transition: background-size 1s;
+
+  background: url(images/ChatBallon-SmalLightBlue.svg);
+  color: var(--link-color);
+  font-family: Roboto, serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  border:none;
+  outline:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+html .pdfViewer .page button.chatballon {
+  outline:none;
+}
+
+
+html .pdfViewer .page [data-paragraph-end] button.chatballon {
+  position:absolute;
+  right:-28px;
+  bottom: -7px;
+}
+
+html button.chatballon.pressed{
+  background: url(images/ChatBallon-SmalBlue.svg);
+  color: var(--link-color);
+  transition: color 1s,background 1s;
+
+}
+
+html button.chatballon:hover,
+html button.chatballon:active,
+html button.chatballon:focus {
+  background: url(images/ChatBallon-SmalBlue.svg);
+  color: var(--link-color);
+  transition: color 1s;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+html button.chatballon.big{
+  width: 36px;
+  height: 27px;
+  background-size: 36px 27px;
+  padding: 1px 4px 2px 1px;
+  background-color: inherit;
+  background: url(images/ChatBallon-BigLightBlue.svg);
+
+  color: var(--link-color);
+  font-family: Roboto, serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+html button.chatballon.big:hover {
+  background: url(images/ChatBallon-BigBlue.svg);
+  color: var(--link-color);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+html button.chatballon.big.pressed {
+  background: url(images/ChatBallon-BigBlue.svg);
+  color: var(--link-color);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+html button.chatballonU{
+  width: 27px;
+  height: 27px;
+  background-size: 27px 27px;
+  padding: 1px 3px 2px 1px;
+  background-color: inherit;
+  transition: background-size 1s;
+
+  background: url(images/ChatBallon-SmalLightGreen.svg);
+  color: #1cb98d;
+  font-family: Roboto, serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  border:none;
+  outline:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+html .pdfViewer .page button.chatballonU {
+  outline: none;
+}
+
+
+html .pdfViewer .page [data-paragraph-end] button.chatballonU {
+  outline: none;
+  bottom: -7px;
+}
+
+html button.chatballonU.pressed{
+  background: url(images/ChatBallon-SmallGreen.svg);
+  color: #1cb98d;
+  transition: color 1s, background 1s;
+
+}
+
+html button.chatballonU:hover ,
+html button.chatballonU:active ,
+html button.chatballonU:focus {
+  background: url(images/ChatBallon-SmallGreen.svg);
+  color: #1cb98d;
+  transition: color 1s;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+html button.chatballonU.big{
+  width: 36px;
+  height: 27px;
+  background-size: 36px 27px;
+  padding: 1px 4px 2px 1px;
+  background-color: inherit;
+  background: url(images/ChatBallon-BigLightGreen.svg);
+
+  color: #1cb98d;
+  font-family: Roboto, serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+html button.chatballonU.big:hover {
+  background: url(images/ChatBallon-BigGreen.svg);
+  color: #1cb98d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+html button.chatballonU.big.pressed {
+  background: url(images/ChatBallon-BigGreen.svg);
+  color: #1cb98d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rmq_pdfTooltipbg{
+  background-image: linear-gradient(to top, black 0%, #727273 100%)!important;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+  width: 100%;
+}
+
+.rmq_adderPdfExplanatoryText{
+  padding: 16px;
+  font-family: Roboto, "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.25;
+  text-align: left;
+  color: var(--dim-white-text);
+  border-bottom: solid 1px var(--remarq-black-fill);
+}
+
+.rmq_tooltipCustom {
+     display: inline-block;
+ }
+
+.rmq_tooltipPosition{
+    position: absolute;
+}
+
+
+/* Tooltip text */
+.rmq_tooltipCustom .tooltiptextPDF.annotator-editor,
+.rmq_tooltipCustom .rmq_tooltiptext {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  visibility: visible;    
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+}
+
+.tooltiptextPDF button,
+.rmq_tooltiptext button {
+   background:inherit!important;
+   outline: none!important;
+   padding: 0 !important;
+   margin: 0 !important;
+   border-radius: 0 !important;
+   border: 0 !important;
+   min-height: 60px!important;
+   box-shadow: none!important;
+   cursor: pointer!important;
+}
+
+#rmq_annotatedpdf, #rmq_originalpdf {
+	min-width: 100px;
+}
+
+.rmq_tooltipCustom .tooltiptextPDF::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-bottom-color: var(--dim-B-grey-fill)
+}
+
+div#rmq_pdfTooltip.rmq_tooltipCustom.rmq_tooltipPosition {
+  position:absolute;
+  z-index: 999999;
+  max-width: 200px;
+}
+
+
+/*override pdf textLayer. Remove opacity:0.2 which caused chatballons not showing correctly.*/
+.textLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity:1;
+  line-height: 1.0;
+}
+
+.textLayer ::selection {
+  background: rgba(0, 124, 255, 0.3);
+}
+
+
+.textLayer ::-moz-selection {
+  background: rgba(0, 124, 255, 0.3);
+}
+
+.annotator-hide{
+  display:none;
+}
+
+.annotator-editor {
+	display: none!important;
+}
+
+.rmq_adderIcon {
+	min-height: 17px;
+    height: 17px;
+}
+
+.rmq_adderIcon svg {
+	float: unset;
+	width: auto;
+	height: 100%;
+}
+
+.rmq_adderIcon svg path,
+.rmq_adderIcon svg polygon {
+	fill: var(--dim-white-text);
+}
+
+.rmq_adderIcon svg polyline {
+	stroke: var(--dim-white-text);
+}
+
+.rmq_adderText {
+  font-family: Roboto, "Open Sans", sans-serif;
+  font-size: 8px!important; /* When Epub changes modes, it has a bad habbit of resetting the font size*/
+  margin: 4px 16px 0px;
+  font-weight: 500;
+  color: var(--dim-white-text);
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+
+
+.rmq-annotator-adder button{
+  width:80px;
+}
+
+.rmq-annotator-adder button:hover *,
+.rmq-annotator-adder button:focus *{
+  color: var(--main-color-text);
+  /*fill: var(--main-color-text);*/
+  stroke: var(--main-color-text);
+
+}
+
+.rmq-annotator-adder button:focus {
+  border: red 1px solid;
+}
